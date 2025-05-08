@@ -28,5 +28,21 @@
 一旦引用被初始化，其引用的对象不能再次通过赋值改变引用的对象（实际上是一个变量的别名，赋值的过程中就被绑定到一起，编译上来讲是同一个变量，内存地址是一致的）
 
 
+## 隐式转换
+C++会自动进行隐式转换
+主要是关于类的自动隐式转换，如果类的构造函数支持某些参数，那么C++会自动调用这个构造函数进行隐式转换
+```C++
+Class Entity{
+private:
+    string m_name;
+public:
+    Entity(const string& name) : m_name(name){}
+}
+
+Entity a = Entity("Hello");
+Entity b("Hello");
+Entity e = "Hello";     //隐式转换
+
+```
 
 

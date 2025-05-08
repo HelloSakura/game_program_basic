@@ -46,3 +46,38 @@ enum example:unsigned char{
 
 }
 ```
+
+
+### const
+
+const没有做任何事情，只是告诉编译器这些地方是“只读的”，编译器根据标注去检测使用时的正确性
+一种规则，保持代码的简洁性（这种规则是可以被打破的）
+重点是看const修饰的是什么，修饰的那个值是只读的
+**从右向左，依次结合，const就近结合**
+>1. 指向const变量的指针（const int *p）：指针指向的值不能被改变，指针指向的地址可以改变
+>2. const指针（int* const p） ：指针指向的值可以被改变，指针指向的地址不能改变
+>3. this是一个const指针，被const修饰的成员函数，相当于const指针指向一个const对象，函数内部不能修改变量值，除非被mutable修饰
+>4. const int&用作返回值实际上表示的事，const指针指向const对象，&引用本身就是一个const指针
+
+参考：![https://zhuanlan.zhihu.com/p/90720012]
+
+
+## new
+为什么要用C++：需要关注内存、性能表现及优化
+>1. new是在堆上分配内存，使用new是有时间损耗的，需要找空闲内存分配
+>2. new不只是分配内存，还会调用构造函数
+>3. new后一定记得delete
+>4. new可以指定分配内存的地址起点
+
+```C++
+int* buffer = new int(10);
+Entity* e = new(buffer) Entity();
+delete e;
+delete buffer;
+```
+
+## explicit
+
+用于构造函数，禁止隐式转换
+（C++编译器在赋值的情况下，如果一个类型到一个类型的隐式转换是允许的，会一直自动进行下去）
+
