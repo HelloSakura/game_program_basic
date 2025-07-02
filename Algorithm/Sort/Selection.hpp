@@ -36,6 +36,7 @@ public:
                     m_array[i] = min;
                 }
             }
+            print();
         }
     }
 
@@ -44,6 +45,7 @@ public:
         for(int i = 0; i < m_size; i++){
             std::cout << m_array[i] << " ";
         }
+        std::cout << std::endl;
     }
 
 private:
