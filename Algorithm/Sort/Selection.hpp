@@ -4,21 +4,16 @@
 *@date 2025-06-26
 */
 #include<iostream>
+#include "Sort.hpp"
 
-class Selection{
+
+class Selection:public Sort {
 public:
-    Selection(int* array, int size)
-    {
-        m_array = array;
-        m_size = size;
-    }
+    Selection(int size):Sort(size)
+    {}
 
     ~Selection()
-    {
-        delete[] m_array;
-        m_array = nullptr;
-        m_size = 0;
-    }
+    {}
 
     /**
      * @brief 循环遍历，每次从余下的数组中找到一个最小值，与排序好的部分末尾交换
@@ -39,16 +34,4 @@ public:
             print();
         }
     }
-
-    void print()
-    {
-        for(int i = 0; i < m_size; i++){
-            std::cout << m_array[i] << " ";
-        }
-        std::cout << std::endl;
-    }
-
-private:
-    int* m_array;
-    int m_size;
 };

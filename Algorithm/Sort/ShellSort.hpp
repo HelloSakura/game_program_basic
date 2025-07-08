@@ -6,21 +6,15 @@
 
 
 #include<iostream>
+#include "Sort.hpp"
 
-class ShellSort{
+class ShellSort:public Sort{
 public:
-    ShellSort(int* array, int size)
-    {
-        m_array = array;
-        m_size = size;
-    }
+    ShellSort(int size):Sort(size)
+    {}
 
     ~ShellSort()
-    {
-        delete[] m_array;
-        m_array = nullptr;
-        m_size = 0;
-    }
+    {}
 
     /**
      * @brief 
@@ -52,16 +46,4 @@ public:
         a = b;
         b = temp;
     }
-
-    void print()
-    {
-        for(int i = 0; i < m_size; i++){
-            std::cout << m_array[i] << " ";
-        }
-        std::cout << std::endl;
-    }
-
-private:
-    int* m_array;
-    int m_size;
 };

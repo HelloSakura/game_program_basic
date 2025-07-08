@@ -15,17 +15,19 @@ int* getRandomArray(int& size);
 int main()
 {
     int size = 20;
-    int* array = getRandomArray(size);
-
-    ShellSort shellSort(array, size);
+    ShellSort shellSort(size);
     shellSort.sort();
 
     return 0;
 }
 
-
 int* getRandomArray(int& size)
 {
+    if(size <= 0){
+        std::cout << "size error" << std::endl;
+        return;
+    }
+
     srand(time(NULL));
     int* array = new int[size];
     for (int i = 0; i < size; i++)
@@ -34,3 +36,4 @@ int* getRandomArray(int& size)
     }
     return array;
 }
+

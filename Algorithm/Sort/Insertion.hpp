@@ -4,14 +4,14 @@
 *@date 2025-06-26
 */
 #include<iostream>
+#include "Sort.hpp"
 
-class Insertion{
+class Insertion: public Sort{
 public:
-    Insertion(int* array, int size)
+    Insertion(int size):Sort(size)
     {
-        m_array = array;
-        m_size = size;
     }
+
 
     ~Insertion()
     {
@@ -38,16 +38,4 @@ public:
             print();
         }
     }
-
-    void print()
-    {
-        for(int i = 0; i < m_size; i++){
-            std::cout << m_array[i] << " ";
-        }
-        std::cout << std::endl;
-    }
-
-private:
-    int* m_array;
-    int m_size;
 };

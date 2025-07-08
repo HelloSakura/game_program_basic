@@ -4,23 +4,19 @@
 *@date 2025-07-03
 */
 #include<iostream>
+#include "Sort.hpp"
 
-class MergeSort{
+class MergeSort:public Sort{
 public:
-    MergeSort(int* array, int size)
+    MergeSort(int size):Sort(size)
     {
-        m_array = array;
-        m_buffer = new int[size];
-        m_size = size;
+        m_buffer = getRandomArray(size);
     }
 
     ~MergeSort()
     {
-        delete[] m_array;
         delete[] m_buffer;
-        m_array = nullptr;
         m_buffer = nullptr;
-        m_size = 0;
     }
 
     /**
@@ -69,15 +65,6 @@ public:
         
     }
 
-    void print()
-    {
-        for(int i = 0; i < m_size; i++){
-            std::cout << m_array[i] << " ";
-        }
-    }
-
-private:
-    int* m_array;
+protected:
     int* m_buffer;
-    int m_size;
 };
