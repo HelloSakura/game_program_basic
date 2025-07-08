@@ -30,6 +30,14 @@ public:
         std::cout << std::endl;
     }
 
+    
+    void swap(int &a, int &b)
+    {
+        int temp = a;
+        a = b;
+        b = temp;
+    }
+
     virtual void sort() = 0;
 
 protected:

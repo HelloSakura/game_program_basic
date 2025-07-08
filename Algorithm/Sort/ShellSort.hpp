@@ -3,9 +3,6 @@
 *description 希尔排序
 *@date 2025-07-01
 */
-
-
-#include<iostream>
 #include "Sort.hpp"
 
 class ShellSort:public Sort{
@@ -38,12 +35,5 @@ public:
             print();
             gap /= 2;
         }
-    }
-
-    void swap(int &a, int &b)
-    {
-        int temp = a;
-        a = b;
-        b = temp;
     }
 };
