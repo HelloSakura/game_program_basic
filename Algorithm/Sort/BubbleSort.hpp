@@ -3,7 +3,7 @@
 *description 冒泡排序
 *@date 2025-07-08
 */
-
+#pragma once
 #include "Sort.hpp"
 
 class BubbleSort: public Sort {
@@ -25,7 +25,7 @@ public:
     void sort() override
     {
         for(int i = 0; i < m_size; i++) {
-            for(int j = 0; j < m_size - i; j++){
+            for(int j = 0; j < m_size - i - 1; j++){
                 if(m_array[j + 1] < m_array[j]) {
                     swap(m_array[j], m_array[j+1]);
                 }

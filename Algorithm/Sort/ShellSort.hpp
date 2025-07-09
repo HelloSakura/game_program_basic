@@ -3,6 +3,7 @@
 *description 希尔排序
 *@date 2025-07-01
 */
+#pragma once
 #include "Sort.hpp"
 
 class ShellSort:public Sort{

@@ -3,7 +3,7 @@
 *description 快速排序
 *@date 2025-07-08
 */
-
+#pragma once
 #include "Sort.hpp"
 
 class QuickSort: public Sort {
@@ -32,6 +32,7 @@ public:
     {
         if (low < high)
         {
+            //分区操作，返回基准元素的最终位置
             int pivot = partition(low, high);
             quickSort(low, pivot - 1);
             quickSort(pivot + 1, high);

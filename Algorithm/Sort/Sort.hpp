@@ -3,6 +3,7 @@
 *description xxx
 *@date 2025-06-26
 */
+#pragma once
 #include<iostream>
 #include<cstdlib>
 #include<ctime>
