@@ -8,11 +8,16 @@
 #include<cstdlib>
 #include<ctime>
 
-class Sort{
+class Sort {
 public:
     Sort(int size)
     {
         m_array = getRandomArray(size);
+        m_size = size;
+    }
+
+    Sort(int* array, int size) {
+        m_array = array;
         m_size = size;
     }
 
@@ -22,17 +27,17 @@ public:
         m_array = nullptr;
         m_size = 0;
     }
-    
+
     void print()
     {
-        for(int i = 0; i < m_size; i++){
+        for (int i = 0; i < m_size; i++) {
             std::cout << m_array[i] << " ";
         }
         std::cout << std::endl;
     }
 
-    
-    void swap(int &a, int &b)
+
+    void swap(int& a, int& b)
     {
         int temp = a;
         a = b;
@@ -44,9 +49,9 @@ public:
 protected:
     int* getRandomArray(int& size)
     {
-        if(size <= 0){
+        if (size <= 0) {
             std::cout << "size error" << std::endl;
-            return;
+            return nullptr;
         }
 
         srand(time(NULL));
