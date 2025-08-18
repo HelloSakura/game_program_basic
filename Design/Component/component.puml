@@ -1,0 +1,32 @@
+@startuml
+
+interface Component{
+    + void execute()
+}
+
+
+class Composite{
+    -Children: List<Component>
+    + add(Component component)
+    + remove(Component component)
+    + getChild(int index)
+    + void execute()
+}
+
+class Leaf{
+    ...
+    + void execute()
+}
+
+
+class Client{
+    
+}
+
+
+Client --> Component
+Composite o--> Component
+Leaf --|> Component
+Composite ..> Leaf
+
+@enduml

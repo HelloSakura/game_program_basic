@@ -1,0 +1,23 @@
+@startuml
+class Client{
+
+}
+
+
+class Singleton {
+    - Singleton()
+    - Singleton(const Singleton&) = delete
+    - Singleton& operator=(const Singleton&) = delete
+    - ~Singleton()
+    + static Singleton& Instance()
+    + void doSomething()
+}
+
+
+
+
+Client --> Singleton
+Singleton --> Singleton
+
+
+@enduml
